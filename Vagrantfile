@@ -2,7 +2,7 @@
 # Override these values with a local config defined in VD_CONF
 conf = {
     'ip_prefix' => '192.168.27',
-    'box_name' => 'precise',
+    'box_name' => 'precise_horizon',
     'box_url' => 'http://files.vagrantup.com/precise64.box',
     'allocate_memory' => 1024,
     'cache_dir' => 'cache/',
