@@ -1,0 +1,77 @@
+# Update the repos when ./stack.sh is run
+RECLONE=yes
+
+# Good ol' "password" passwords ... for development only of course
+ADMIN_PASSWORD=password
+MYSQL_PASSWORD=password
+RABBIT_PASSWORD=password
+SERVICE_PASSWORD=password
+SERVICE_TOKEN=tokentoken
+
+# This network conf is for a vagrant virtual host attached to 192.168.33.10
+# Network configuration. HOST_IP should be the same as the IP you used
+# for the private network in your Vagrantfile. The combination of
+# FLAT_INTERFACE and PUBLIC_INTERFACE indicates that OpenStack should
+# bridge network traffic over eth1.
+HOST_IP=192.168.33.10
+HOST_IP_IFACE=eth1
+FLAT_INTERFACE=br100
+PUBLIC_INTERFACE=eth1
+FLOATING_RANGE=192.168.33.0/24
+
+# Swift is not enable by default?
+enable_service swift
+SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5
+SWIFT_REPLICAS=1
+
+# Use MySQL and not that hellchild MongoDB
+CEILOMETER_BACKEND=mysql
+
+# Enable the ceilometer metering services
+enable_service ceilometer-acompute,ceilometer-acentral,ceilometer-collector
+
+# Enable the ceilometer alarming services
+enable_service ceilometer-alarm-evaluator,ceilometer-alarm-notifier
+
+# Enable the ceilometer api services
+enable_service ceilometer-api
+
+# Keep everything on the stable/havana branch
+BRANCH=stable/havana
+
+# metering service
+CEILOMETER_BRANCH=$BRANCH
+
+# volume service
+CINDER_BRANCH=$BRANCH
+
+# image catalog service
+GLANCE_BRANCH=$BRANCH
+
+# heat service
+HEAT_BRANCH=$BRANCH
+
+# django powered web control panel for openstack
+HORIZON_BRANCH=$BRANCH
+
+# baremetal provisionint service
+IRONIC_BRANCH=$BRANCH
+
+# unified auth system (manages accounts/tokens)
+KEYSTONE_BRANCH=$BRANCH
+
+# compute service
+NOVA_BRANCH=$BRANCH
+
+# neutron service
+NEUTRON_BRANCH=$BRANCH
+
+# consolidated openstack requirements
+REQUIREMENTS_BRANCH=$BRANCH
+
+# storage service
+SWIFT_BRANCH=$BRANCH
+SWIFT3_BRANCH=$BRANCH
+
+# Tempest test suite
+TEMPEST_BRANCH=$BRANCH
