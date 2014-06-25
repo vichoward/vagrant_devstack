@@ -7,7 +7,7 @@ enable_service q-l3
 enable_service neutron
 enable_service q-meta
 
-OS_USERNAME=admin
+#OS_USERNAME=admin
 
 KEYSTONE_REPO=https://github.com/netoisstools/keystone.git
 KEYSTONE_BRANCH=havana_driver_email_comcast2
